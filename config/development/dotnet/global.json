@@ -1,0 +1,19 @@
+{
+  "sdk": {
+    "version": "7.0.0",
+    "rollForward": "latestMinor",
+    "allowPrerelease": false
+  },
+  "msbuild-sdks": {
+    "Microsoft.Build.Traversal": "3.2.0"
+  },
+  "tools": {
+    "dotnet": "7.0.0",
+    "runtimes": {
+      "win-x64": {},
+      "linux-x64": {},
+      "osx-x64": {},
+      "osx-arm64": {}
+    }
+  }
+}

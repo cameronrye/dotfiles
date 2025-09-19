@@ -1,0 +1,120 @@
+# VS Code Extensions List
+# Install with: cat extensions.txt | xargs -L 1 code --install-extension
+
+# ===== THEMES AND ICONS =====
+zhuangtongfa.Material-theme
+PKief.material-icon-theme
+antfu.icons-carbon
+GitHub.github-vscode-theme
+
+# ===== LANGUAGE SUPPORT =====
+
+# JavaScript/TypeScript
+ms-vscode.vscode-typescript-next
+bradlc.vscode-tailwindcss
+formulahendry.auto-rename-tag
+christian-kohler.path-intellisense
+ms-vscode.vscode-json
+
+# Python
+ms-python.python
+ms-python.flake8
+ms-python.black-formatter
+ms-python.isort
+ms-python.pylint
+
+# C# / .NET
+ms-dotnettools.csharp
+ms-dotnettools.vscode-dotnet-runtime
+formulahendry.dotnet-test-explorer
+
+# Web Development
+bradlc.vscode-tailwindcss
+formulahendry.auto-close-tag
+formulahendry.auto-rename-tag
+ritwickdey.LiveServer
+ms-vscode.live-server
+
+# Markdown
+yzhang.markdown-all-in-one
+shd101wyy.markdown-preview-enhanced
+DavidAnson.vscode-markdownlint
+
+# YAML
+redhat.vscode-yaml
+
+# XML
+redhat.vscode-xml
+
+# Docker
+ms-azuretools.vscode-docker
+
+# ===== CODE QUALITY =====
+esbenp.prettier-vscode
+dbaeumer.vscode-eslint
+ms-vscode.vscode-eslint
+streetsidesoftware.code-spell-checker
+usernamehw.errorlens
+oderwat.indent-rainbow
+CoenraadS.bracket-pair-colorizer-2
+
+# ===== GIT AND VERSION CONTROL =====
+eamodio.gitlens
+GitHub.vscode-pull-request-github
+GitHub.copilot
+GitHub.copilot-chat
+mhutchie.git-graph
+donjayamanne.githistory
+
+# ===== PRODUCTIVITY =====
+ms-vscode.vscode-speech
+ms-vscode-remote.remote-containers
+ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-wsl
+ms-vscode.remote-explorer
+ms-vscode.hexeditor
+ms-vscode.powershell
+ms-vscode.makefile-tools
+
+# ===== UTILITIES =====
+formulahendry.code-runner
+ms-vscode.vscode-serial-monitor
+ms-vscode.notepadplusplus-keybindings
+alefragnani.Bookmarks
+gruntfuggly.todo-tree
+aaron-bond.better-comments
+naumovs.color-highlight
+christian-kohler.npm-intellisense
+
+# ===== DATABASE =====
+ms-mssql.mssql
+mtxr.sqltools
+mtxr.sqltools-driver-pg
+mtxr.sqltools-driver-mysql
+mtxr.sqltools-driver-sqlite
+
+# ===== TESTING =====
+ms-vscode.test-adapter-converter
+hbenl.vscode-test-explorer
+kavod-io.vscode-jest-test-adapter
+ms-playwright.playwright
+
+# ===== API DEVELOPMENT =====
+humao.rest-client
+42Crunch.vscode-openapi
+Postman.postman-for-vscode
+
+# ===== CLOUD AND DEVOPS =====
+ms-vscode.azure-account
+ms-azuretools.vscode-azureresourcegroups
+ms-azuretools.vscode-azurestorage
+ms-azuretools.vscode-azurefunctions
+ms-kubernetes-tools.vscode-kubernetes-tools
+redhat.vscode-openshift-connector
+
+# ===== MISC =====
+ms-vscode.vscode-speech
+vscodevim.vim
+ms-vscode.wordcount
+alefragnani.project-manager
+formulahendry.terminal-here

@@ -1,0 +1,261 @@
+# Git Configuration
+# Modern Git configuration with useful aliases and settings
+
+[user]
+	name = YOUR_NAME
+	email = YOUR_EMAIL
+	# Uncomment and configure if using GPG signing
+	# signingkey = YOUR_GPG_KEY_ID
+
+[core]
+	editor = code --wait
+	autocrlf = input
+	safecrlf = true
+	excludesfile = ~/.gitignore_global
+	attributesfile = ~/.gitattributes_global
+	pager = less -FMRiX
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	precomposeunicode = false
+	untrackedCache = true
+	fsmonitor = true
+
+[init]
+	defaultBranch = main
+
+[push]
+	default = simple
+	followTags = true
+	autoSetupRemote = true
+
+[pull]
+	rebase = true
+	ff = only
+
+[fetch]
+	prune = true
+	prunetags = true
+
+[rebase]
+	autoStash = true
+	autoSquash = true
+
+[merge]
+	tool = vscode
+	conflictstyle = diff3
+	ff = false
+
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+
+[diff]
+	tool = vscode
+	algorithm = patience
+	renames = copies
+	mnemonicprefix = true
+
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+
+[status]
+	showUntrackedFiles = all
+	submoduleSummary = true
+
+[log]
+	date = relative
+	decorate = short
+	abbrevCommit = true
+
+[format]
+	pretty = format:%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)
+
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	status = auto
+	showbranch = auto
+	interactive = auto
+	grep = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[branch]
+	autosetupmerge = always
+	autosetuprebase = always
+
+[rerere]
+	enabled = true
+	autoupdate = true
+
+[help]
+	autocorrect = 1
+
+[commit]
+	verbose = true
+	# Uncomment to enable GPG signing
+	# gpgsign = true
+
+[tag]
+	# Uncomment to enable GPG signing for tags
+	# gpgsign = true
+
+[gpg]
+	program = gpg
+
+# ===== ALIASES =====
+
+[alias]
+	# Basic shortcuts
+	a = add
+	aa = add --all
+	ap = add --patch
+	b = branch
+	ba = branch --all
+	bd = branch --delete
+	bD = branch --delete --force
+	c = commit
+	ca = commit --amend
+	can = commit --amend --no-edit
+	cm = commit --message
+	co = checkout
+	cob = checkout -b
+	d = diff
+	dc = diff --cached
+	ds = diff --staged
+	dt = difftool
+	f = fetch
+	fa = fetch --all
+	l = log
+	m = merge
+	p = push
+	pf = push --force-with-lease
+	pl = pull
+	r = rebase
+	ri = rebase --interactive
+	rc = rebase --continue
+	ra = rebase --abort
+	rs = reset
+	rsh = reset --hard
+	rss = reset --soft
+	s = status
+	st = status
+	sw = switch
+	swc = switch -c
+
+	# Advanced shortcuts
+	unstage = reset HEAD --
+	uncommit = reset --soft HEAD~1
+	recommit = commit --amend --no-edit
+	precommit = diff --cached --diff-algorithm=minimal -w
+	
+	# Stash shortcuts
+	sl = stash list
+	sa = stash apply
+	ss = stash save
+	sp = stash pop
+	sd = stash drop
+	sc = stash clear
+
+	# Log aliases
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lga = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	le = log --oneline --decorate
+
+	# Show aliases
+	aliases = config --get-regexp alias
+	remotes = remote --verbose
+	branches = branch --all
+	tags = tag --list
+	stashes = stash list
+
+	# Useful shortcuts
+	last = log -1 HEAD --stat
+	cp = cherry-pick
+	cl = clone
+	clean-branches = "!git branch --merged | grep -v '\\*\\|main\\|master\\|develop' | xargs -n 1 git branch -d"
+	ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
+	
+	# Find commits by source code
+	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+	
+	# Find commits by commit message
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+	
+	# Remove branches that have already been merged with main
+	dm = "!git branch --merged | grep -v '\\*\\|main\\|master' | xargs -n 1 git branch -d"
+	
+	# List contributors with number of commits
+	contributors = shortlog --summary --numbered
+	
+	# Credit an author on the latest commit
+	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+	
+	# Interactive rebase with the given number of latest commits
+	reb = "!r() { git rebase -i HEAD~$1; }; r"
+	
+	# Find branches containing commit
+	fb = "!f() { git branch -a --contains $1; }; f"
+	
+	# Find tags containing commit
+	ft = "!f() { git describe --always --contains $1; }; f"
+	
+	# Find commits by author
+	fa = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --author=$1; }; f"
+
+# ===== URL SHORTCUTS =====
+
+[url "git@github.com:"]
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+	insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+	insteadOf = "gist:"
+
+# ===== GITHUB CLI INTEGRATION =====
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/local/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/local/bin/gh auth git-credential
+
+# ===== PLATFORM-SPECIFIC SETTINGS =====
+
+# Include platform-specific configurations
+[includeIf "gitdir:~/"]
+	path = ~/.gitconfig_local
+
+# Include work-specific configurations
+[includeIf "gitdir:~/work/"]
+	path = ~/.gitconfig_work

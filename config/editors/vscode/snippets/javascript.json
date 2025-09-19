@@ -1,0 +1,214 @@
+{
+  "Console Log": {
+    "prefix": "cl",
+    "body": ["console.log($1);"],
+    "description": "Console log"
+  },
+  "Console Log Variable": {
+    "prefix": "clv",
+    "body": ["console.log('$1:', $1);"],
+    "description": "Console log with variable name"
+  },
+  "Console Error": {
+    "prefix": "ce",
+    "body": ["console.error($1);"],
+    "description": "Console error"
+  },
+  "Console Warn": {
+    "prefix": "cw",
+    "body": ["console.warn($1);"],
+    "description": "Console warn"
+  },
+  "Arrow Function": {
+    "prefix": "af",
+    "body": ["const $1 = ($2) => {", "  $3", "};"],
+    "description": "Arrow function"
+  },
+  "Async Arrow Function": {
+    "prefix": "aaf",
+    "body": ["const $1 = async ($2) => {", "  $3", "};"],
+    "description": "Async arrow function"
+  },
+  "Try Catch": {
+    "prefix": "tc",
+    "body": ["try {", "  $1", "} catch (error) {", "  console.error(error);", "  $2", "}"],
+    "description": "Try catch block"
+  },
+  "Async Try Catch": {
+    "prefix": "atc",
+    "body": [
+      "try {",
+      "  const $1 = await $2;",
+      "  $3",
+      "} catch (error) {",
+      "  console.error(error);",
+      "  $4",
+      "}"
+    ],
+    "description": "Async try catch block"
+  },
+  "Import": {
+    "prefix": "imp",
+    "body": ["import $1 from '$2';"],
+    "description": "Import statement"
+  },
+  "Import Destructured": {
+    "prefix": "imd",
+    "body": ["import { $1 } from '$2';"],
+    "description": "Import destructured"
+  },
+  "Export Default": {
+    "prefix": "exp",
+    "body": ["export default $1;"],
+    "description": "Export default"
+  },
+  "Export Named": {
+    "prefix": "exn",
+    "body": ["export { $1 };"],
+    "description": "Export named"
+  },
+  "Function": {
+    "prefix": "fn",
+    "body": ["function $1($2) {", "  $3", "}"],
+    "description": "Function declaration"
+  },
+  "Async Function": {
+    "prefix": "afn",
+    "body": ["async function $1($2) {", "  $3", "}"],
+    "description": "Async function declaration"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": ["for (let $1 = 0; $1 < $2.length; $1++) {", "  $3", "}"],
+    "description": "For loop"
+  },
+  "For Of Loop": {
+    "prefix": "fof",
+    "body": ["for (const $1 of $2) {", "  $3", "}"],
+    "description": "For of loop"
+  },
+  "For In Loop": {
+    "prefix": "fin",
+    "body": ["for (const $1 in $2) {", "  $3", "}"],
+    "description": "For in loop"
+  },
+  "ForEach": {
+    "prefix": "fe",
+    "body": ["$1.forEach(($2) => {", "  $3", "});"],
+    "description": "ForEach method"
+  },
+  "Map": {
+    "prefix": "map",
+    "body": ["$1.map(($2) => {", "  return $3;", "});"],
+    "description": "Map method"
+  },
+  "Filter": {
+    "prefix": "filter",
+    "body": ["$1.filter(($2) => {", "  return $3;", "});"],
+    "description": "Filter method"
+  },
+  "Reduce": {
+    "prefix": "reduce",
+    "body": ["$1.reduce(($2, $3) => {", "  return $4;", "}, $5);"],
+    "description": "Reduce method"
+  },
+  "Promise": {
+    "prefix": "promise",
+    "body": [
+      "new Promise((resolve, reject) => {",
+      "  $1",
+      "  if ($2) {",
+      "    resolve($3);",
+      "  } else {",
+      "    reject($4);",
+      "  }",
+      "});"
+    ],
+    "description": "Promise"
+  },
+  "Fetch": {
+    "prefix": "fetch",
+    "body": [
+      "fetch('$1')",
+      "  .then(response => response.json())",
+      "  .then(data => {",
+      "    $2",
+      "  })",
+      "  .catch(error => {",
+      "    console.error('Error:', error);",
+      "  });"
+    ],
+    "description": "Fetch API"
+  },
+  "Async Fetch": {
+    "prefix": "afetch",
+    "body": [
+      "try {",
+      "  const response = await fetch('$1');",
+      "  const data = await response.json();",
+      "  $2",
+      "} catch (error) {",
+      "  console.error('Error:', error);",
+      "}"
+    ],
+    "description": "Async fetch"
+  },
+  "SetTimeout": {
+    "prefix": "st",
+    "body": ["setTimeout(() => {", "  $1", "}, $2);"],
+    "description": "SetTimeout"
+  },
+  "SetInterval": {
+    "prefix": "si",
+    "body": ["setInterval(() => {", "  $1", "}, $2);"],
+    "description": "SetInterval"
+  },
+  "Class": {
+    "prefix": "class",
+    "body": [
+      "class $1 {",
+      "  constructor($2) {",
+      "    $3",
+      "  }",
+      "",
+      "  $4",
+      "}"
+    ],
+    "description": "Class declaration"
+  },
+  "Method": {
+    "prefix": "method",
+    "body": ["$1($2) {", "  $3", "}"],
+    "description": "Class method"
+  },
+  "Getter": {
+    "prefix": "get",
+    "body": ["get $1() {", "  return this.$2;", "}"],
+    "description": "Getter method"
+  },
+  "Setter": {
+    "prefix": "set",
+    "body": ["set $1(value) {", "  this.$2 = value;", "}"],
+    "description": "Setter method"
+  },
+  "Destructuring Assignment": {
+    "prefix": "dest",
+    "body": ["const { $1 } = $2;"],
+    "description": "Destructuring assignment"
+  },
+  "Destructuring Array": {
+    "prefix": "desta",
+    "body": ["const [$1] = $2;"],
+    "description": "Array destructuring"
+  },
+  "Template Literal": {
+    "prefix": "tl",
+    "body": ["`$1`"],
+    "description": "Template literal"
+  },
+  "Object Literal": {
+    "prefix": "obj",
+    "body": ["{", "  $1: $2,", "}"],
+    "description": "Object literal"
+  }
+}

@@ -1,0 +1,112 @@
+# Global Python packages for development
+# Install with: pip install -r requirements.txt
+
+# Development tools
+ipython
+jupyter
+jupyterlab
+notebook
+
+# Code formatting and linting
+black
+isort
+flake8
+pylint
+mypy
+autopep8
+yapf
+
+# Testing frameworks
+pytest
+pytest-cov
+pytest-mock
+pytest-xdist
+tox
+coverage
+nose2
+
+# Documentation
+sphinx
+mkdocs
+mkdocs-material
+
+# Web frameworks
+flask
+django
+fastapi
+uvicorn
+gunicorn
+
+# Data science and analysis
+numpy
+pandas
+matplotlib
+seaborn
+plotly
+scipy
+scikit-learn
+requests
+
+# Database
+sqlalchemy
+psycopg2-binary
+pymongo
+redis
+
+# Utilities
+click
+rich
+typer
+pydantic
+python-dotenv
+configparser
+
+# HTTP clients
+httpx
+aiohttp
+
+# Async programming
+asyncio
+aiofiles
+
+# Package management
+pip-tools
+pipenv
+poetry
+
+# Code quality
+bandit
+safety
+pre-commit
+
+# Performance
+cProfile
+memory-profiler
+line-profiler
+
+# Debugging
+pdb
+ipdb
+pudb
+
+# Environment management
+virtualenv
+virtualenvwrapper
+
+# API development
+marshmallow
+cerberus
+
+# Task queues
+celery
+rq
+
+# Monitoring
+sentry-sdk
+
+# Miscellaneous
+python-dateutil
+pytz
+colorama
+tqdm
+tabulate

@@ -1,0 +1,127 @@
+# Homebrew Bundle File
+# Install with: brew bundle install
+
+# ===== TAPS =====
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+tap "homebrew/services"
+
+# ===== ESSENTIAL TOOLS =====
+brew "git"
+brew "curl"
+brew "wget"
+brew "unzip"
+brew "zip"
+brew "tree"
+brew "htop"
+brew "jq"
+brew "yq"
+
+# ===== SHELL AND TERMINAL =====
+brew "zsh"
+brew "starship"
+brew "tmux"
+brew "fzf"
+brew "ripgrep"
+brew "bat"
+brew "exa"
+brew "fd"
+
+# ===== DEVELOPMENT TOOLS =====
+brew "node"
+brew "python@3.11"
+brew "pyenv"
+brew "nvm"
+brew "gh"
+brew "neovim"
+
+# ===== MODERN CLI TOOLS =====
+brew "delta"
+brew "dust"
+brew "procs"
+brew "bandwhich"
+brew "grex"
+brew "hyperfine"
+brew "tokei"
+brew "bottom"
+
+# ===== DATABASES =====
+brew "postgresql@14"
+brew "redis"
+brew "sqlite"
+
+# ===== CONTAINERS =====
+brew "docker"
+brew "docker-compose"
+
+# ===== CLOUD TOOLS =====
+brew "awscli"
+brew "azure-cli"
+brew "terraform"
+
+# ===== SECURITY =====
+brew "gnupg"
+brew "pass"
+
+# ===== MEDIA =====
+brew "ffmpeg"
+brew "imagemagick"
+
+# ===== NETWORKING =====
+brew "nmap"
+brew "telnet"
+brew "netcat"
+
+# ===== SYSTEM TOOLS =====
+brew "mas"
+brew "duti"
+
+# ===== CASKS (GUI APPLICATIONS) =====
+
+# Terminals
+cask "kitty"
+
+# Development
+cask "visual-studio-code"
+cask "jetbrains-toolbox"
+
+# Browsers
+cask "google-chrome"
+cask "firefox"
+
+# Utilities
+cask "rectangle"
+cask "the-unarchiver"
+cask "appcleaner"
+
+# Communication
+# cask "slack"
+# cask "discord"
+# cask "zoom"
+
+# Productivity
+# cask "notion"
+# cask "obsidian"
+
+# Design
+# cask "figma"
+
+# Database
+# cask "tableplus"
+# cask "sequel-pro"
+
+# API Development
+# cask "postman"
+# cask "insomnia"
+
+# ===== FONTS =====
+cask "font-fira-code-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-hack-nerd-font"
+cask "font-source-code-pro"
+
+# ===== MAC APP STORE =====
+# mas "Xcode", id: 497799835
+# mas "1Password 7", id: 1333542190

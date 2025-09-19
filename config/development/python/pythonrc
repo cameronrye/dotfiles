@@ -1,0 +1,72 @@
+# Python startup script
+# This file is executed when Python starts in interactive mode
+
+import os
+import sys
+import atexit
+import readline
+import rlcompleter
+
+# Enable tab completion
+readline.parse_and_bind("tab: complete")
+
+# History file
+history_file = os.path.expanduser("~/.python_history")
+
+# Read history file if it exists
+if os.path.exists(history_file):
+    readline.read_history_file(history_file)
+
+# Set maximum history length
+readline.set_history_length(1000)
+
+# Save history on exit
+def save_history():
+    readline.write_history_file(history_file)
+
+atexit.register(save_history)
+
+# Clean up namespace
+del os, sys, atexit, readline, rlcompleter, history_file, save_history
+
+# Welcome message
+print("Python interactive shell with enhanced features loaded.")
+print("Tab completion and history are enabled.")
+
+# Useful imports for interactive use
+try:
+    import json
+    import datetime as dt
+    import collections
+    from pprint import pprint as pp
+    print("Imported: json, datetime as dt, collections, pprint as pp")
+except ImportError:
+    pass
+
+# Pretty printing for dictionaries and lists
+def pretty_print(obj):
+    """Pretty print objects"""
+    if isinstance(obj, (dict, list)):
+        import json
+        print(json.dumps(obj, indent=2, default=str))
+    else:
+        print(obj)
+
+# Alias for pretty printing
+pp = pretty_print
+
+# Helper function to see object attributes
+def see(obj):
+    """Show attributes and methods of an object"""
+    return [attr for attr in dir(obj) if not attr.startswith('_')]
+
+# Helper function to get object info
+def info(obj):
+    """Get information about an object"""
+    print(f"Type: {type(obj)}")
+    print(f"Module: {getattr(obj, '__module__', 'N/A')}")
+    print(f"Doc: {getattr(obj, '__doc__', 'N/A')}")
+    if hasattr(obj, '__dict__'):
+        print(f"Attributes: {list(obj.__dict__.keys())}")
+
+print("Helper functions available: see(), info(), pretty_print() (aliased as pp)")

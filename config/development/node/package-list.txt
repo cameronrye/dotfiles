@@ -1,0 +1,81 @@
+# Global Node.js packages to install
+# Install with: npm install -g $(cat package-list.txt | grep -v '^#' | tr '\n' ' ')
+
+# Development tools
+@angular/cli
+@vue/cli
+create-react-app
+create-next-app
+vite
+webpack-cli
+parcel-bundler
+
+# Testing frameworks
+jest
+mocha
+cypress
+playwright
+
+# Linting and formatting
+eslint
+prettier
+@typescript-eslint/cli
+stylelint
+
+# TypeScript
+typescript
+ts-node
+@types/node
+
+# Build tools
+gulp-cli
+grunt-cli
+rollup
+
+# Utilities
+nodemon
+pm2
+concurrently
+cross-env
+rimraf
+mkdirp
+
+# Package management
+npm-check-updates
+npm-check
+depcheck
+
+# Documentation
+jsdoc
+typedoc
+
+# Deployment
+vercel
+netlify-cli
+firebase-tools
+
+# Development servers
+http-server
+live-server
+serve
+
+# Code quality
+jshint
+standard
+
+# Performance
+clinic
+0x
+
+# Database tools
+mongodb
+redis-cli
+
+# API development
+swagger-codegen-cli
+openapi-generator-cli
+
+# Miscellaneous
+uuid-cli
+json-server
+faker-cli
